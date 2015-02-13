@@ -28,6 +28,7 @@ function download(url, dest, cb) {
         return;
       }
       response.pipe(fs.createWriteStream(dest));
+      cb();
     }).on('error', returnError);
   });
 }
